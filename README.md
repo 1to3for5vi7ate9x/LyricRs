@@ -6,10 +6,11 @@ LyricRs is a simple macOS desktop application that displays the lyrics for the c
 
 *   **Spotify Integration:** Connects to the Spotify Web API using OAuth (PKCE flow) to get the current song title, artists, and playback status. Caches authentication tokens for seamless subsequent runs.
 *   **Lyrics Display:** Fetches lyrics by scraping Genius.com based on the detected song.
+*   **Lyrics Caching:** Stores successfully fetched lyrics locally (up to ~500 songs, LRU eviction) to reduce scraping and improve performance for repeated songs.
 *   **Always-on-Top:** The lyrics window stays visible above other applications.
 *   **Transparency Control:** An opacity slider allows adjusting the window's background transparency.
 *   **Multi-language Support:** Includes Noto Sans KR font to render characters for languages like Korean correctly.
-*   **Modular Code:** Organized into separate modules for Spotify interaction, lyrics fetching, and the GUI application logic.
+*   **Modular Code:** Organized into separate modules (`app`, `spotify`, `lyrics`, `cache`).
 
 ## Setup
 
