@@ -1,0 +1,33 @@
+[package]
+name = "LyricRs" # Renamed project package
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+
+# Use specific tokio features needed for async runtime
+tokio = { version = "1", features = ["rt-multi-thread", "macros"] }
+# Keep reqwest for lyrics fetching (can potentially be removed if rspotify's http client is used)
+reqwest = { version = "0.11", features = ["json", "blocking"] }
+scraper = "0.19"
+# eframe uses winit internally, remove the feature flag
+eframe = "0.27"
+# Add winit directly to access platform extensions
+winit = "0.29"
+
+regex = "1"
+
+# --- Caching Dependencies ---
+chrono = { version = "0.4", features = ["serde"] }
+serde_json = "1.0"
+sha2 = "0.10"
+dirs = "5.0" # Added for finding cache directory
+hex = "0.4" # Added for encoding cache key hash
+# --- End Caching Dependencies ---
+
+dotenv = "0.15"
+# Using rspotify 0.13 with features for PKCE auth and CLI helper
+rspotify = { version = "0.13", features = ["cli", "env-file"] } # 'cli' for prompt_for_token, 'env-file' for Credentials::from_env
+serde = { version = "1.0", features = ["derive"] } # Needed by rspotify models
+
+# once_cell removed

@@ -1,0 +1,18 @@
+# Ignore build artifacts
+/target/
+
+# Ignore dependency directories (if any, e.g., node_modules)
+
+# Ignore configuration files containing secrets
+.env
+.spotify_token_cache.json
+
+# Ignore OS-specific files
+.DS_Store
+*.pem
+*.key
+
+# Ignore IDE/editor files
+.vscode/
+*.sublime-project
+*.sublime-workspace
